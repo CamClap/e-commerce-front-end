@@ -1,0 +1,28 @@
+article{
+    display: grid;
+    margin: 2rem;
+    justify-items: center;
+    align-items: center;
+
+    background: linear-gradient(49deg, #FFFFFF 0%, #EAEAEA 70.88%);
+    box-shadow: 30.8425px -26.8109px 81.7333px rgba(51, 51, 51, 0.1035), inset -6.92242px 6.01757px 9.1723px #E5E5E5, inset 6.92242px -6.01757px 9.1723px #FFFFFF;
+    border-radius: 14px;
+    padding: 1.2rem;
+    width: 80%;
+    margin: 2rem auto;
+}
+.article-right{
+    padding: 2rem;
+}
+.article-right h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.8rem 0;
+}
+
+@media screen and (min-width: 900px) {
+   article{
+    grid-template-columns: 1fr 2fr;
+   }
+   
+  }

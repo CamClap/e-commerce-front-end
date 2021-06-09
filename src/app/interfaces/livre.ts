@@ -1,9 +1,13 @@
 
 export interface Livre {
-    isbn?: string,
+    ISBN?: string,
     imageLivre?: string,
     formatLivre?: string,
     nomEditeur?: string,
     nomGenre?: string,
-    refArticle?: number
+    refArticle?: number,
+    resume?: string,
+    stock?: number,
+    titre?: string,
+    prix?: number
 }
