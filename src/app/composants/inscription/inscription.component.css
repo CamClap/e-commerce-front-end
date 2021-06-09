@@ -1,1 +1,50 @@
+h1, h2, h3{
+  color:#003E87;
+ 
+}
+span{
+  width: 80%;
+  height: 1.5px;
+  background: #003E87;
+  display: block;
+  margin-top: 4px;
+  align-items: center;
+}
 
+#creer,
+input {
+  all: unset;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow:  3px 3px 6px #c4c4c4,
+               -3px -3px 6px #ffffff;
+  padding: 5px 8px;
+  margin: 15px;
+  cursor: pointer;
+  
+  
+}
+
+#creer:hover{
+    box-shadow: 3px 3px 6px #fff,-3px -3px 6px #c4c4c4;
+}
+
+  
+.container{
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width:768px){
+  .col2{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.col2>div{
+  width: 40%;
+}
+
+}
