@@ -10,7 +10,7 @@ import { LivreService } from 'src/app/services/livre.service';
 })
 export class LivreComponent implements OnInit {
   isbn = 0;
-  livre: Livre ={}
+  livre ={}
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -21,7 +21,7 @@ export class LivreComponent implements OnInit {
     this.route.paramMap.subscribe((value) => {
       this.isbn = +value.get('isbn');
     });
-    this.livreService.getOneByIsbn(this.isbn).subscribe((res) =>{
+    this.livreService.getOneByref(this.isbn).subscribe((res) =>{
       this.livre = res
     })
   }

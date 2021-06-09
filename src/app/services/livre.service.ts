@@ -14,7 +14,7 @@ export class LivreService {
     return this.http.get<Array<Livre>>(this.url);
   }
   
-  getOneByIsbn(isbn: number) {
+  getOneByref(isbn: number) {
     return this.http.get<Livre>(this.url+isbn)
   }
 
