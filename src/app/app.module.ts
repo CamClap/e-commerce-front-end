@@ -12,6 +12,7 @@ import { AdresseComponent } from './composants/adresse/adresse.component';
 import { PanierComponent } from './composants/panier/panier.component';
 import { LivreComponent } from './composants/livre/livre.component';
 import { InscriptionComponent } from './composants/inscription/inscription.component';
+import { MenuComponent } from './composants/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InscriptionComponent } from './composants/inscription/inscription.compo
     AdresseComponent,
     PanierComponent,
     LivreComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,92 @@
+
+.logo img {
+    width: 50px;
+  }
+  nav ul:first-child {
+    display: none;
+  }
+  nav ul li {
+    cursor: pointer;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1rem;
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.521);
+  }
+  .right-col {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .menu-mobile {
+    position: absolute;
+    height: 100vh;
+    width: 70%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(180deg, #043978 21.37%, #8baed7 100%);
+    display: flex;
+    flex-flow: column nowrap;
+    /* display: none; */
+  }
+  .menu-mobile>ul li, .menu-mobile p{
+      color: whitesmoke;
+      margin: 3rem 0 0 3rem;
+  }
+  .menu-mobile>p {
+      font-weight: bold;
+      font-size: 1.3rem;
+  }
+  
+  .menu-mobile button{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: transparent;
+      color: white;
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      border: whitesmoke solid 1px;
+      margin: 2rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+  }
+  button img{
+      width: 30px;
+      padding-left: 1.2rem;
+  }
+   .btn-panier{
+    display: flex;
+    place-content: center;
+    padding: .8rem 1.2rem;
+    background: linear-gradient(250deg, #D7D7D7 0%, #FFFFFF 78.02%);
+    box-shadow: -7.14166px 2.59935px 15.2px rgba(51, 51, 51, 0.2295), inset 2.17424px -0.791359px 2.31378px #CDCDCD, inset -2.17424px 0.791359px 2.31378px #FFFFFF;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.2rem;
+   }
+   .close-menu{
+       margin: 2rem;
+   }
+   .active{
+       text-decoration: underline;
+   }
+  @media screen and (min-width: 900px) {
+    nav ul {
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 2em;
+    }
+    .menu-button {
+      display: none;
+    }
+    nav ul:first-child {
+        display: flex;
+      }
+   
+  }
+  
