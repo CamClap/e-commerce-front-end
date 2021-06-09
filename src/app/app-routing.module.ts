@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: "article", component: ArticleComponent},
   {path: "commande", component: CommandeComponent},
   {path: "livre", component: LivreComponent},
+  {path: "livre/:isbn", component: LivreComponent},
   {path: "panier", component: PanierComponent},
   {path: "utilisateur", component: UtilisateurComponent},
   {path: "home", component: HomeComponent},

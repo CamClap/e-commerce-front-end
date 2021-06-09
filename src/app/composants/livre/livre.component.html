@@ -1,1 +1,12 @@
-<p>livre works!</p>
+<article>
+    <div class="article-left"><img src="https://via.placeholder.com/150" alt=""></div>
+    <div class="article-right">
+        <h3>{{livre}}</h3>
+        <p class="description">{{livre}}</p>
+        <div class="article-ajoutPrix">
+            <p class="prix"> {{ livre }} </p>
+            <button (click)="ajoutPanier()">Ajouter au panier</button>
+        </div>
+        {{ livre | json}}
+    </div>
+</article>
