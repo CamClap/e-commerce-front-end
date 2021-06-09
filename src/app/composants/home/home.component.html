@@ -1,12 +1,14 @@
 <div class="search">
-    <label for="search">Recherche</label>
-    <input type="search" name="search" id="search" placeholder="Livre ou auteur...">
-    <button>Chercher</button>
+    <form [formGroup]="rechercheForm" (ngSubmit)="rechercherLivre()">
+        <label for="search">Recherche</label>
+        <input type="search" name="search" id="search" placeholder="Livre ou auteur..." formControlName="motsCles">
+        <button>Chercher</button>
+    </form>
 </div>
 
 <h2> Les Best Sellers </h2>
 
-<div *ngFor="let item of livres">
+<div *ngFor="let item of result">
     <article>
         <div class="article-left"><img src="https://via.placeholder.com/150" alt=""></div>
         <div class="article-right">
