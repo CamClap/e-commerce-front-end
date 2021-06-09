@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/User';
+import { AuthentificationService } from 'src/app/services/authentification.services';
 
 @Component({
   selector: 'app-authentification',
@@ -7,15 +9,21 @@ import { User } from 'src/app/interfaces/User';
   styleUrls: ['./authentification.component.css']
 })
 export class AuthentificationComponent implements OnInit {
-  motDePasse=[];
-  email=[]
-  user: User = {};
-
-  constructor() { }
-
-  ngOnInit(): void {
+  
+    user: User = {};
+    erreur = '';
+    constructor(private auth: AuthentificationService, private router: Router) {}
+  
+    ngOnInit(): void {}
+    connexion() {
+      // this.auth.checkData(this.user).subscribe((res) => {
+      //   if (res) {
+      //     localStorage.setItem('user', JSON.stringify(res));
+      //     this.router.navigateByUrl('/home');
+      //   } else {
+      //     this.erreur = 'Identifiant incorrect';
+      //   }
+      // });
+      
+    }
   }
-connexion(){
-
-}
-}
