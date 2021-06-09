@@ -12,6 +12,8 @@ import { PanierComponent } from './composants/panier/panier.component';
 import { LivreComponent } from './composants/livre/livre.component';
 import { InscriptionComponent } from './composants/inscription/inscription.component';
 import { AuthentificationComponent } from './composants/authentification/authentification.component';
+import { MenuComponent } from './composants/menu/menu.component';
+import { HomeComponent } from './composants/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthentificationComponent } from './composants/authentification/authent
     PanierComponent,
     LivreComponent,
     InscriptionComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    MenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
