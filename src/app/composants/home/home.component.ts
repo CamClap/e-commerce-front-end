@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
   detaile = () => {};
   rechercherLivre() {
     let motsCles = this.rechercheForm.get('motsCles').value;
-    console.log(motsCles);
     this.result = this.livres.filter(livre => livre.titre.toLowerCase().includes(motsCles));
   }
 }
