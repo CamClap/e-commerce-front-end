@@ -13,7 +13,7 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  creerCompte(){
+  getUser(){
     this.user = {...this.user};
     this.user = {};
     console.log(this.user);

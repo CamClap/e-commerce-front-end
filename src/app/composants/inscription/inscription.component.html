@@ -2,7 +2,7 @@
   <div class="container">
     <h2>Création de Compte</h2>
     <span></span>
-    <form #creation=ngForm (submit)=creerCompte()>
+    <form #creation=ngForm (submit)=getUser()>
       <div class="personne col2">
         <div>
         <label for="nom">Nom:</label><br>
@@ -18,7 +18,7 @@
       <div class="adresse col2">
         <h3>Adresses</h3>
         <h3>Adresse de facturation :</h3>
-        <div>
+        <div class="adresseFacturation">
         <label for="num">Numéro:</label><br>
         <input type="text" id="num"><br></div>
         <div><label for="rue">Rue:</label><br>
@@ -31,7 +31,7 @@
         <input type="text" id="complément"><br></div>
       
         <h3>Adresse de livraison :</h3>
-        <div>
+        <div class="adresseLivraison">
         <label for="num">Numéro:</label><br>
         <input type="text" id="num"><br>
         <label for="rue">Rue:</label><br>
