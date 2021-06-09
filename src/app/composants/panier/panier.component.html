@@ -1,13 +1,20 @@
 <h2>Panier</h2>
 
-<div>
+<div class="container">
     <ul>
-        <li>
-            <!-- {{livre}} -->
-            <button>Supprimer</button>
+        <li *ngFor="let livre of livres">
+            {{livre.imageLivre}}
+            {{livre.titre}}<br>
+            {{livre.prix}}
+            <select name="stock">
+                <option selected="selected">1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option><br>
+            </select>
+            
         </li>
     </ul>
-    <button>Validation</button>
+    <button>Supprimer la commande</button>
+    <button>Valider la commande</button>
 </div>
-
-
