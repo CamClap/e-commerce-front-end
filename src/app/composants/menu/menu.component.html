@@ -1,11 +1,11 @@
 <nav>
-    <div class="logo"><img src="./assets/images/logo-ib.png" alt="Logo ib formation"></div>
+    <div class="logo"><img src="./assets/images/logo-ib.png" alt="Logo ib formation" routerLink="/home" ></div>
     <div class="right-col">
         <ul>
             <li routerLink="/listArticles" routerLinkActive="active"><a>Gouvernance Informatique</a></li>
             <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Informatique</a></li>
             <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Bureautique</a></li>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Connexion</a></li>
+            <li routerLink="/authentification" routerLinkActive="active"><a>Connexion</a></li>
         </ul>
         <div class="btn-panier"><img class="panier" src="../assets/images/uil_shopping-basket.png" alt="panier">
             <p>1</p>
@@ -14,7 +14,7 @@
     </div>
     <div class="menu-mobile" *ngIf="showMenu" >
         <div class="close-menu"><img src="../assets/images/cross-menu.png" alt="icone pour ouverture du menu" (click)="togglemenu()"></div>
-        <button>
+        <button routerLink="/authentification">
             Connexion
             <img src="../assets/images/fa-regular_user.png" alt="Panier menu">
         </button>
