@@ -8,10 +8,10 @@ import { ProduitComponent } from './composants/produit/produit.component';
 import { ArticleComponent } from './composants/article/article.component';
 import { UtilisateurComponent } from './composants/utilisateur/utilisateur.component';
 import { CommandeComponent } from './composants/commande/commande.component';
-import { AdresseComponent } from './composants/adresse/adresse.component';
 import { PanierComponent } from './composants/panier/panier.component';
 import { LivreComponent } from './composants/livre/livre.component';
 import { InscriptionComponent } from './composants/inscription/inscription.component';
+import { AuthentificationComponent } from './composants/authentification/authentification.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +20,10 @@ import { InscriptionComponent } from './composants/inscription/inscription.compo
     ArticleComponent,
     UtilisateurComponent,
     CommandeComponent,
-    AdresseComponent,
     PanierComponent,
     LivreComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    AuthentificationComponent
   ],
   imports: [
     BrowserModule,

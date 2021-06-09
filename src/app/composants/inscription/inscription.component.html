@@ -1,16 +1,37 @@
-<h1>Création de Compte</h1>
-<form #creation=ngForm (submit)=creerCompte()>
-    <label for="nom">Nom:</label><br>
-    <input type="text" id="nom"><br>
-    <label for="prenom">Prenom:</label><br>
-    <input type="text" id="prenom"><br>
-    <label for="email">E-mail:</label><br>
-    <input type="text" id="email"><br>
-    <label for="mdp">Mot de passe:</label><br>
-    <input type="text" id="mdp">
-    <div>
-        <h2>Adresses</h2>
-        <h3>Adresse de facturation</h3>
+<ng-container>
+  <div class="container">
+    <h2>Création de Compte</h2>
+    <span></span>
+    <form #creation=ngForm (submit)=creerCompte()>
+      <div class="personne col2">
+        <div>
+        <label for="nom">Nom:</label><br>
+        <input type="text" id="nom"><br>
+        <label for="prenom">Prenom:</label><br>
+        <input type="text" id="prenom"><br>
+        <label for="email">E-mail:</label><br>
+        <input type="text" id="email"><br>
+        <label for="motDePasse">Mot de passe:</label><br>
+        <input type="text" id="motDePasse">
+      </div>
+      </div>
+      <div class="adresse col2">
+        <h3>Adresses</h3>
+        <h3>Adresse de facturation :</h3>
+        <div>
+        <label for="num">Numéro:</label><br>
+        <input type="text" id="num"><br></div>
+        <div><label for="rue">Rue:</label><br>
+        <input type="text" id="rue"><br></div>
+        <div> <label for="cp">Code Postal:</label><br>
+        <input type="text" id="cp"><br></div>
+        <div><label for="ville">Ville:</label><br>
+        <input type="text" id="ville"><br></div>
+        <div> <label for="complément">Complément:</label><br>
+        <input type="text" id="complément"><br></div>
+      
+        <h3>Adresse de livraison :</h3>
+        <div>
         <label for="num">Numéro:</label><br>
         <input type="text" id="num"><br>
         <label for="rue">Rue:</label><br>
@@ -21,17 +42,9 @@
         <input type="text" id="ville"><br>
         <label for="complément">Complément:</label><br>
         <input type="text" id="complément"><br>
-        <h3>Adresse de livraison</h3>
-        <label for="num">Numéro:</label><br>
-        <input type="text" id="num"><br>
-        <label for="rue">Rue:</label><br>
-        <input type="text" id="rue"><br>
-        <label for="cp">Code Postal:</label><br>
-        <input type="text" id="cp"><br>
-        <label for="ville">Ville:</label><br>
-        <input type="text" id="ville"><br>
-        <label for="complément">Complément:</label><br>
-        <input type="text" id="complément"><br>
-  </div><br>
-  <button>Créer le compte</button>
-</form>
+      </div>
+      </div><br>
+      <button id="creer">Créer le compte</button>
+    </form>
+  </div>
+</ng-container>
