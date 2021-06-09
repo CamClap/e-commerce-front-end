@@ -10,7 +10,8 @@ import { LivreService } from 'src/app/services/livre.service';
 })
 export class LivreComponent implements OnInit {
   isbn = 0;
-  livre ={}
+  livre:Livre = {}
+ 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,7 +23,8 @@ export class LivreComponent implements OnInit {
       this.isbn = +value.get('isbn');
     });
     this.livreService.getOneByref(this.isbn).subscribe((res) =>{
-      this.livre = res
+       this.livre = res;
+      
     })
   }
   ajoutPanier =() => {
