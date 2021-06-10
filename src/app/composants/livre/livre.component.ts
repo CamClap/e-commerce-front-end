@@ -12,7 +12,8 @@ import { PanierService } from 'src/app/services/panier.service';
 })
 export class LivreComponent implements OnInit {
   isbn = 0;
-  livre:Livre = {}
+  livre:Livre = {};
+  quantite = 0;
  
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +32,12 @@ export class LivreComponent implements OnInit {
     });
   };
   ajoutPanier(isbn) {
+    
     this.panierService.addToCart(isbn);
   }
 
+changerQuantite(){
+ 
+  
+}
 }

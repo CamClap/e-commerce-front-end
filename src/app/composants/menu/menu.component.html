@@ -7,7 +7,7 @@
             <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Bureautique</a></li>
             <li routerLink="/authentification" routerLinkActive="active"><a>Connexion</a></li>
         </ul>
-        <div class="btn-panier"><img class="panier" src="../assets/images/uil_shopping-basket.png" alt="panier">
+        <div [routerLink]="['/panier/']" class="btn-panier"><img class="panier" src="../assets/images/uil_shopping-basket.png" alt="panier">
             <p>1</p>
         </div>
         <img class="menu-button" src="../assets/images/menu-mobile-open.png" alt="icone pour ouverture du menu" (click)="togglemenu()">

@@ -14,7 +14,9 @@
             <h3>Prix: </h3>
             <p class="prix">{{ livre.prix }} € </p>
             <button (click)="ajoutPanier(livre.ISBN)">Ajouter au panier</button>
+            <button id="moins" (click)="changerQuantite()"> - </button > {{quantite}} <button id="plus" (click)="changerQuantite()"> + </button>
         </div>
     </div>
 </article>
 <button [routerLink]="['/home']">Retour à la liste </button>
+<!-- {{|json}} -->

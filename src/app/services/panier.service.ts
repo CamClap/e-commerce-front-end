@@ -3,6 +3,7 @@ import { LignePanier } from '../interfaces/ligne-panier';
 import { Livre } from '../interfaces/livre';
 import { LivreService } from './livre.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,5 +31,6 @@ export class PanierService {
       panier.push(lignePanier);
     }
     sessionStorage.setItem('panier', JSON.stringify(panier));
+
   }
 }
