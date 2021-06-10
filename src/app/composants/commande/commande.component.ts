@@ -11,5 +11,5 @@ export class CommandeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  validerCommande(){}
 }

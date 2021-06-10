@@ -9,7 +9,7 @@ import { LivreService } from 'src/app/services/livre.service';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
-  livres ={}
+  livres =[]
  
 
   constructor(private l: LivreService, private router: Router) { }
