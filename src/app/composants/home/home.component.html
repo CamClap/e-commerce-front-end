@@ -16,7 +16,7 @@
             <p class="description">{{item.resume}}</p>
             <div class="article-ajoutPrix">
                 <p class="prix"> {{ item.prix }} </p>
-                <button (click)=ajoutPanier()>Ajouter au panier</button>
+                <button (click)="ajoutPanier(item.ISBN)">Ajouter au panier</button>
                 <button [routerLink]="['/livre/',item.ref]">Détails</button>
             </div>
         </div>
