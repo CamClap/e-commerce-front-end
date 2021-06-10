@@ -1,4 +1,4 @@
-<!-- <h1>Page d'authentification</h1>
+<h1>Page d'authentification 2</h1>
 <form #monForm=ngForm (ngSubmit)=connexion()>
 
     <div>
@@ -9,7 +9,7 @@
     </div>
 
     <div>
-        Mot de passe : <input type=password name=motDePasse [(ngModel)]=user.motDePasse required #motDePasse=ngModel>
+        Mot de passe : <input type=password name=motDePasse [(ngModel)]=user.mdp required #motDePasse=ngModel>
         <span [hidden]="motDePasse.valid || motDePasse.pristine">
             Le mot de passe est obligatoire
         </span>
@@ -20,4 +20,4 @@
         </button>
     </div>
 </form>
-<div id="error">{{ erreur }}</div> -->
+<div id="error">{{ erreur }}</div>

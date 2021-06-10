@@ -5,7 +5,7 @@ export interface User {
     nom?: string,
     prenom?: string,
     email?: string,
-    motDePasse?: string,
+    mdp?: string,
     adresse?: Adresse,
     adresseLivraison?: Adresse
 }

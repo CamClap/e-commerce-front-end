@@ -1,48 +1,51 @@
 <ng-container>
   <div class="container">
     <h2>Création de Compte</h2>
-    <span></span>
-    <form #creation=ngForm (submit)=getUser()>
-      <div class="personne col2">
-        <div>
+    <form #creation=ngForm [formGroup]="formUser" (ngSubmit)="addUser()">
+      <div>
         <label for="nom">Nom:</label><br>
-        <input type="text" id="nom"><br>
+        <input type="text" id="nom" formControlName="nom"><br>
         <label for="prenom">Prenom:</label><br>
-        <input type="text" id="prenom"><br>
+        <input type="text" id="prenom" formControlName="prenom"><br>
         <label for="email">E-mail:</label><br>
-        <input type="text" id="email"><br>
+        <input type="email" id="email" formControlName="email"><br>
         <label for="motDePasse">Mot de passe:</label><br>
-        <input type="text" id="motDePasse">
-      </div>
+        <input type="password" id="motDePasse" formControlName="mdp">
       </div>
       <div class="adresse col2">
-        <h3>Adresses</h3>
+        <h2>Adresses</h2>
         <h3>Adresse de facturation :</h3>
-        <div class="adresseFacturation">
-        <label for="num">Numéro:</label><br>
-        <input type="text" id="num"><br></div>
-        <div><label for="rue">Rue:</label><br>
-        <input type="text" id="rue"><br></div>
-        <div> <label for="cp">Code Postal:</label><br>
-        <input type="text" id="cp"><br></div>
-        <div><label for="ville">Ville:</label><br>
-        <input type="text" id="ville"><br></div>
-        <div> <label for="complément">Complément:</label><br>
-        <input type="text" id="complément"><br></div>
-      
+        <div class="adresseFacturation" formGroupName="adresse">
+          <label for="num">Numéro:</label><br>
+          <input type="text" id="num" formControlName="num"><br>
+
+          <div><label for="rue">Rue:</label><br>
+            <input type="text" id="rue" formControlName="rue"><br>
+          </div>
+          <div> <label for="cp">Code Postal:</label><br>
+            <input type="text" id="cp" formControlName="cp"><br>
+          </div>
+          <div><label for="ville">Ville:</label><br>
+            <input type="text" id="ville" formControlName="ville"><br>
+          </div>
+          <div> <label for="complément">Complément:</label><br>
+            <input type="text" id="complément" formControlName="complement"><br>
+          </div>
+        </div>
+
         <h3>Adresse de livraison :</h3>
-        <div class="adresseLivraison">
-        <label for="num">Numéro:</label><br>
-        <input type="text" id="num"><br>
-        <label for="rue">Rue:</label><br>
-        <input type="text" id="rue"><br>
-        <label for="cp">Code Postal:</label><br>
-        <input type="text" id="cp"><br>
-        <label for="ville">Ville:</label><br>
-        <input type="text" id="ville"><br>
-        <label for="complément">Complément:</label><br>
-        <input type="text" id="complément"><br>
-      </div>
+        <div class="adresseLivraison" v formGroupName="adresseLivraison">
+          <label for="numL">Numéro:</label><br>
+          <input type="text" id="numL" formControlName="num"><br>
+          <label for="rueL">Rue:</label><br>
+          <input type="text" id="rueL" formControlName="rue"><br>
+          <label for="cpL">Code Postal:</label><br>
+          <input type="text" id="cpL" formControlName="cp"><br>
+          <label for="villeL">Ville:</label><br>
+          <input type="text" id="villeL" formControlName="ville"><br>
+          <label for="complémentL">Complément:</label><br>
+          <input type="text" id="complémentL" formControlName="complement"><br>
+        </div>
       </div><br>
       <button id="creer">Créer le compte</button>
     </form>
