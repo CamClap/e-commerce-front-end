@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LivreService } from 'src/app/services/livre.service';
 import { Livre } from 'src/app/interfaces/livre';
 import { LignePanier } from 'src/app/interfaces/ligne-panier';
+import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private livreServices: LivreService
+    private livreServices: LivreService,
+    private panierService: PanierService
   ) {}
 
   ngOnInit(): void {
@@ -40,20 +42,6 @@ export class HomeComponent implements OnInit {
     );
   }
   ajoutPanier(isbn) {
-    const livre = this.livres.find((elt) => elt.ISBN == isbn);
-    const lignePanier: LignePanier = {};
-    lignePanier.livre = livre;
-    lignePanier.quantite = 1;
-    let panier: LignePanier[] = [];
-    if (sessionStorage.getItem('panier')) {
-      panier = JSON.parse(sessionStorage.getItem('panier'));
-    }
-    if (livre == lignePanier.livre) {
-      lignePanier.quantite ++
-        
-      
-    }
-    panier.push(lignePanier);
-    sessionStorage.setItem('panier', JSON.stringify(panier));
+    this.panierService.addToCart(isbn);
   }
 }
