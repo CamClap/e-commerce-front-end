@@ -13,7 +13,7 @@
         <div class="article-ajoutPrix">
             <h3>Prix: </h3>
             <p class="prix">{{ livre.prix }} € </p>
-            <button (click)="ajoutPanier()">Ajouter au panier</button>
+            <button (click)="ajoutPanier(livre.ISBN)">Ajouter au panier</button>
         </div>
     </div>
 </article>
