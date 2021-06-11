@@ -56,10 +56,20 @@ export class PanierComponent implements OnInit {
     this.remplirPanier();
   }
 
+  getStockLivres() {
+    this.l.getAllLivres().subscribe((res) => {
+      this.livres = res;
+      console.log(this.livres);
+    });
+  }
+
   validerPanier() {
-    if (sessionStorage.getItem('panier')) {
+    if (sessionStorage.getItem('panier')) {      
+      this.getStockLivres();
+      console.log(this.livres);
       this.commande.total = 0;
       this.commande.lignesCommande = [];
+
       for (let item of this.panier) {
         this.commande.total += (item['livre']['prix'] * item['quantite']);
         this.commande.lignesCommande.push({
@@ -68,15 +78,16 @@ export class PanierComponent implements OnInit {
         });
       }
 
+
       this.commande.idUtilisateur = JSON.parse(localStorage['user'])['id'];
 
-      this.commandeService.addCommande(this.commande).subscribe((res) => {
-        this.commande = {};
-      });
+      // this.commandeService.addCommande(this.commande).subscribe((res) => {
+      //   this.commande = {};
+      // });
 
-      this.viderPanier();
+      // this.viderPanier();
 
-      alert("Commande validée !");
+      // alert("Commande validée !");
     } else {
       alert("Remplissez votre panier d'abord !");
     } 
