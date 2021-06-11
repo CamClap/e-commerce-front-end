@@ -1,0 +1,41 @@
+<div class="content">
+    <h2>Dernieres commandes</h2>
+<section>
+    <table>
+        <tr>
+            <th>Date commande</th>
+            <th>Numero de commande</th>
+            <th>ID client</th>
+            <th>Montant de la commande</th>
+        </tr>
+        <ng-container *ngFor="let item of commandes[0]">
+            <tr>
+                <td> {{ item.dateCommande | date}} </td>
+                <td> {{item.num}}</td>
+                <td> {{item.idUtilisateur}}</td>
+                <td> {{ item.total | currency:'EUR'}}</td>
+            </tr>
+        </ng-container>
+    </table>
+</section>
+
+<h2>Total des commandes </h2>
+<p>{{ totalCommande | currency:'EUR'}}</p>
+<p>au {{ date | date }}</p>
+
+<h2>Meilleurs ventes </h2>
+<section>
+    <table>
+        <tr>
+            <th>Article</th>
+            <th>Quantitée vendue</th>
+        </tr>
+        <ng-container *ngFor="let item of meilleurVente[0]">
+            <tr>
+                <td> {{ item.titre }} </td>
+                <td> {{item.quantiteCommande}}</td>
+            </tr>
+        </ng-container>
+    </table>
+</section>
+</div>
