@@ -14,7 +14,9 @@ export class AuthentificationComponent implements OnInit {
     erreur = '';
     constructor(private auth: AuthentificationService, private router: Router) {}
   
-    ngOnInit(): void {}
+    ngOnInit(): void {
+      console.log(this.user.nom)
+    }
     connexion() {
       this.auth.checkData(this.user).subscribe((res) => {
         if (res) {

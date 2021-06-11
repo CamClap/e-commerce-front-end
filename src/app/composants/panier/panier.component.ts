@@ -15,7 +15,7 @@ export class PanierComponent implements OnInit {
   livres = [];
   panier = [];
   commande: Commande = {};
-  user:{}
+  user= {};
 
   constructor(
     private l: LivreService,

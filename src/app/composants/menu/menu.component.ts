@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   }
   deconnexion = () => {
     localStorage.removeItem('user');
-    this.router.navigateByUrl('/authentification')
+    this.router.navigateByUrl('/home')
   }
 
 }
