@@ -1,0 +1,9 @@
+.article{
+    display: flex;
+    align-items: center;
+    margin:2rem auto;
+    width: 70%;
+}
+.article > a{
+ cursor: pointer;
+}
