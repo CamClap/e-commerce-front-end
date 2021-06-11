@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Button } from 'protractor';
-import { LignePanier } from 'src/app/interfaces/ligne-panier';
 import { Livre } from 'src/app/interfaces/livre';
 import { LivreService } from 'src/app/services/livre.service';
 import { PanierService } from 'src/app/services/panier.service';
