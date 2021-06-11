@@ -6,7 +6,7 @@ import { User } from '../interfaces/user';
   providedIn: 'root'
 })
 export class AuthentificationService {
-private url= 'http://localhost:3000/authentification'
+private url= 'http://localhost:3000/connexion'
   constructor(private http:HttpClient) { }
 
   checkData(u: User) {
