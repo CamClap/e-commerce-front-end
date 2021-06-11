@@ -15,6 +15,7 @@ import { InscriptionComponent } from './composants/inscription/inscription.compo
 import { AuthentificationComponent } from './composants/authentification/authentification.component';
 import { MenuComponent } from './composants/menu/menu.component';
 import { HomeComponent } from './composants/home/home.component';
+import { AdminComponent } from './composants/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomeComponent } from './composants/home/home.component';
     InscriptionComponent,
     AuthentificationComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+section{
+    display: flex;
+    flex-flow: column;
+}
+
+table,th,td{
+    border:1px solid #cccccc;
+    padding: .8rem;
+}
+
+th{
+    font-size: 1.3rem;
+}
+.content{
+    width: 80%;
+    margin:  2rem auto;
+}
