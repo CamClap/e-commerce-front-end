@@ -52,7 +52,7 @@ export class PanierComponent implements OnInit {
     this.remplirPanier();
   }
 
-  validerCommande() {
+  validerPanier() {
 
   }
 

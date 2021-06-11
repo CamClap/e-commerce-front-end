@@ -168,7 +168,7 @@ label{
   gap: 1.4rem;
   align-items: center;
 }
-.search button{
+button{
   background: #FFFFFF;
   border: 1px solid #84F8DC;
   box-sizing: border-box;
