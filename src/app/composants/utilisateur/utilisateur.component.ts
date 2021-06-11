@@ -31,11 +31,15 @@ export class UtilisateurComponent implements OnInit {
       complement:['']
     })
   })
+  router: any;
   constructor(private fb: FormBuilder, private US: UtilisateurService) { }
 
   ngOnInit(): void {
   }
-editUser(){
-
-}
+  modifierUser() {
+    this.US.editUser(this.user).subscribe(res=> {
+      this.router.navigateByUrl('/home');
+    });
+    
+  }
 }

@@ -1,7 +1,7 @@
 <ng-container>
     <div class="container">
       <h2>Mon compte</h2>
-      <form #creation=ngForm [formGroup]="formUser" (ngSubmit)="editUser()">
+      <form #creation=ngForm [formGroup]="formUser" (ngSubmit)="modifierUser()">
         <div>
           <label for="nom">Nom: </label><br>
           <input type="text" id="nom" formControlName="nom"><br>
