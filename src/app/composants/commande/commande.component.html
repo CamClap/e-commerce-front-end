@@ -1,22 +1,22 @@
-<!-- <h2>Votre commande</h2>
+<h2>Votre commande</h2>
 
 
-    <div class="article-left"><img src="https://via.placeholder.com/150" alt=""></div>
-    <div class="article-right">
-        <h2>{{ livre.titre }} </h2>
-        <h3>Résumé :</h3>
-        <p class="description"> {{livre.resume}}</p>
-        <h3>isbn : </h3>
-        <p>{{ livre.ISBN }}</p>
-        <h3>format : </h3>
-        <p>{{ livre.formatLivre }}</p>
-        <h3>Editeur : </h3>
-        <p>{{ livre.nomEditeur }}</p>
-        <div class="article-ajoutPrix">
-            <h3>Prix: </h3>
-            <p class="prix">{{ livre.prix }} € </p>
-            <button (click)="validerCommande()">Valider votre commande</button>
-        </div>
+<div class="commande">
+    <h3>Numéro de commande: {{commande.num}} Date: {{commande.date}}</h3>
+    <h3>Articles :</h3>
+    <p *ngFor="let livre of livres ">Quantité: {{quantiteVoulue()}} Prix: {{livre.prix</p>
+    <div class="client">
+        <h3>Client : </h3>
+        <p>id: {{ user.id }}</p>
+        <p>Nom: {{ user.nom }} Prenom: {{ user.prenom }}</p>
+        <p>E-mail: {{ user.email }}</p>
+        <p>Adresse de facturation: {{ user.adresse }}</p>
+        <p>Adresse de Livraison:{{ user.adresseLivraison }}</p>
     </div>
+    <h3>Prix total: </h3>
+    <p>{{prixTotal()}}</p>
+    <button (click)="validerCommande()">Valider votre commande</button>
+</div>
 
-<button [routerLink]="['/home']">Page d'accueil </button> -->
+
+<button [routerLink]="['/home']">Page d'accueil </button>
