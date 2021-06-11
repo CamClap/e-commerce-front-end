@@ -31,14 +31,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.livreServices.getAllLivres().subscribe((res) => {
       this.livres = res;
-      this.result = this.livres;
+      this.result = this.livres.filter(elt => elt.stock != 0);
     });
   }
   detaile = () => {};
   rechercherLivre() {
     let motsCles = this.rechercheForm.get('motsCles').value.toLowerCase();
     this.result = this.livres.filter((livre) =>
-      livre.titre.toLowerCase().includes(motsCles)
+      livre.titre.toLowerCase().includes(motsCles.toLowerCase())
     );
   }
   ajoutPanier(isbn) {

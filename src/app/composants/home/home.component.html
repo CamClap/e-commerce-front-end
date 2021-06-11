@@ -1,8 +1,8 @@
 <div class="search">
-    <form [formGroup]="rechercheForm" (ngSubmit)="rechercherLivre()">
+    <form [formGroup]="rechercheForm" >
         <label for="search">Recherche</label>
-        <input type="search" name="search" id="search" placeholder="Livre ou auteur..." formControlName="motsCles">
-        <button>Chercher</button>
+        <input type="search" name="search" id="search" placeholder="Livre ou auteur..." formControlName="motsCles" (input)="rechercherLivre()">
+        <!-- <button>Chercher</button> -->
     </form>
 </div>
 
@@ -10,13 +10,15 @@
 
 <div *ngFor="let item of result">
     <article>
-        <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre"width="200px"></div>
+        <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre" width="200px"></div>
         <div class="article-right">
             <h3>{{item.titre}}</h3>
             <p class="description">{{item.resume}}</p>
             <div class="article-ajoutPrix">
                 <p class="prix"> {{ item.prix }} € </p>
-                <button (click)="ajoutPanier(item.ISBN)">Ajouter au panier</button>
+                <ng-container *ngIf="item.stock != 0">
+                    <button (click)="ajoutPanier(item.ISBN)">Ajouter au panier</button>
+                </ng-container>
                 <button [routerLink]="['/livre/',item.ref]">Détails</button>
             </div>
         </div>

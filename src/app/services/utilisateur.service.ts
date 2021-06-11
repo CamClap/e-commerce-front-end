@@ -12,4 +12,7 @@ export class UtilisateurService {
   addPersonne(p: User) {
     return this.http.post<User>(this.url, p);
   }
+  editUser(US: User){
+    return this.http.put<User>(this.url+US.id, US);
+  }
 }
