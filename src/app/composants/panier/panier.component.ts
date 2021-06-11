@@ -9,12 +9,22 @@ import { LivreService } from 'src/app/services/livre.service';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
-  livres =[]
- 
+  livres = [];
+  panier = [];
 
   constructor(private l: LivreService, private router: Router) { }
 
   ngOnInit(): void {
+    this.remplirPanier();
+  }
+
+  remplirPanier() {
+    this.panier = JSON.parse(sessionStorage['panier']);
+
+    for (let i = 0; i < this.panier.length; ++i) {
+      console.log(this.panier[i]);
+    }
+    console.log(this.livres);
   }
 
 }
