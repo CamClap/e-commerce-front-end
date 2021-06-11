@@ -42,6 +42,6 @@ export class HomeComponent implements OnInit {
     );
   }
   ajoutPanier(isbn) {
-    this.panierService.addToCart(isbn);
+    this.panierService.addToCart(isbn, 1);
   }
 }

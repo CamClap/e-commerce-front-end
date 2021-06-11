@@ -1,34 +1,24 @@
 <h2>Panier</h2>
 
 <div class="container">
-    <ul>
-        <li *ngFor="let livre of livres">
-            {{livre.imageLivre}}
-            {{livre.titre}}<br>
-            {{livre.prix}}
-            <select name="stock">
-                <option selected="selected">1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option><br>
-            </select>
-            
-        </li>
-    </ul>
-    <div *ngFor="let item of panier">
+    <div *ngFor="let item of panier; let i = index">
         <article>
-            <p>{{ item.quantite }}</p>
             <div class="article-left"><img src="{{ item.livre.imageLivre }}" alt="Photo du livre"width="100px"></div>
             <div class="article-right">
                 <h3>{{item.livre.titre}}</h3>
                 <p class="description">{{item.livre.resume}}</p>
                 <div class="article-ajoutPrix">
                     <p class="prix"> {{ item.livre.prix * item.quantite }} € </p>
+                    <div class="quantity">
+                        <button id="moins" (click)="moinsQuantitePanier(i)"> - </button> 
+                        {{item.quantite}} 
+                        <button id="plus" (click)="plusQuantitePanier(i)"> + </button>
+                    </div>
                     <button [routerLink]="['/livre/',item.livre.ref]">Détails</button>
                 </div>
             </div>
         </article>
     </div>
-    <button>Supprimer la commande</button>
+    <button (click)="viderPanier()">Vider le panier</button>
     <button>Valider la commande</button>
 </div>

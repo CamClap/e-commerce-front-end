@@ -2,6 +2,7 @@ export interface Commande {
     num?: number,
     date?: string,
     total?: number,
-    idUtilisateur?: number
+    idUtilisateur?: number,
+    lignesCommande?: Array<Object>
 }
 

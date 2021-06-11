@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  nbItems = 0;
   showMenu = false;
-  constructor() { }
+  constructor(private panierService: PanierService) { }
 
   ngOnInit(): void {
+    
+  }
+  ngOnChanges(): void {
+    this.nbItems = this.panierService.getNbItems(); 
   }
   togglemenu = () =>{
     this.showMenu = !this.showMenu
