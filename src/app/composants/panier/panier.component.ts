@@ -4,6 +4,7 @@ import { Commande } from 'src/app/interfaces/Commande';
 import { CommandeService } from 'src/app/services/commande.service';
 import { LivreService } from 'src/app/services/livre.service';
 import { PanierService } from 'src/app/services/panier.service';
+import { LivreComponent } from '../livre/livre.component';
 // import { livre } from 'src/app/composants/livre';
 
 @Component({
@@ -56,41 +57,58 @@ export class PanierComponent implements OnInit {
     this.remplirPanier();
   }
 
-  getStockLivres() {
-    this.l.getAllLivres().subscribe((res) => {
-      this.livres = res;
-      console.log(this.livres);
-    });
-  }
-
   validerPanier() {
-    if (sessionStorage.getItem('panier')) {      
-      this.getStockLivres();
-      console.log(this.livres);
-      this.commande.total = 0;
-      this.commande.lignesCommande = [];
+    if (sessionStorage.getItem('panier')) {
+      this.l.getAllLivres().subscribe((res) => {
+        this.livres = res;
+        let enStock = this.livres.filter(livre => livre.stock > 0);
 
-      for (let item of this.panier) {
-        this.commande.total += (item['livre']['prix'] * item['quantite']);
-        this.commande.lignesCommande.push({
-          "quantiteCommande": item['quantite'],
-          "refArticle": item['livre']['ref']
-        });
-      }
+        this.commande.total = 0;
+        this.commande.lignesCommande = [];
+
+        let valide = true;
+        let titre = '';
+
+        for (let item of this.panier) {
+          for (let i = 0; i < enStock.length; ++i) {
+
+            if (enStock[i].ref == item.livre.ref) {
+              i = enStock.length;
+            } else if (i == enStock.length - 1) {
+              valide = false;
+              titre = item.livre.titre;
+              break;
+            }
+
+          }
+
+          this.commande.total += (item.livre.prix * item.quantite);
+          this.commande.lignesCommande.push({
+            "quantiteCommande": item.quantite,
+            "refArticle": item.livre.ref
+          });
+        }
+
+        if (valide) {
+          this.commande.idUtilisateur = JSON.parse(localStorage['user'])['id'];
+
+          this.commandeService.addCommande(this.commande).subscribe((res) => {
+            this.commande = {};
+          });
+
+          this.viderPanier();
+
+          alert("Commande validée !");
+        } else {
+          alert(`L'article "${titre}" n'est plus en stock.`);
+        }
 
 
-      this.commande.idUtilisateur = JSON.parse(localStorage['user'])['id'];
+      });
 
-      // this.commandeService.addCommande(this.commande).subscribe((res) => {
-      //   this.commande = {};
-      // });
-
-      // this.viderPanier();
-
-      // alert("Commande validée !");
     } else {
       alert("Remplissez votre panier d'abord !");
-    } 
+    }
   }
 
 }
