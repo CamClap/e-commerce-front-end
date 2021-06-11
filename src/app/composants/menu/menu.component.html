@@ -5,7 +5,8 @@
             <li routerLink="/listArticles" routerLinkActive="active"><a>Gouvernance Informatique</a></li>
             <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Informatique</a></li>
             <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Bureautique</a></li>
-            <li routerLink="/authentification" routerLinkActive="active"><a>Connexion</a></li>
+            <li routerLink="/authentification" routerLinkActive="active" *ngIf='!user'><a>Connexion</a></li>
+            <li routerLink="/authentification" routerLinkActive="active" *ngIf='user' (click)="deconnexion()"><a>Déconnexion</a></li>
         </ul>
         <div [routerLink]="['/panier/']" class="btn-panier"><img class="panier" src="../assets/images/uil_shopping-basket.png" alt="panier">
             <p>{{  nbItems }}</p>

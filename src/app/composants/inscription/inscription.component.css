@@ -35,8 +35,8 @@ input:focus{
   gap: 10px;
 }
 @media screen and (min-width: 900px) {
-  .container{
+  /* .container{
    grid-template-columns: repeat(2, 1fr);
-  }
+  } */
   
  }

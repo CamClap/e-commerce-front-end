@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
@@ -9,16 +10,22 @@ import { PanierService } from 'src/app/services/panier.service';
 export class MenuComponent implements OnInit {
   nbItems = 0;
   showMenu = false;
-  constructor(private panierService: PanierService) { }
+  user= {};
+  constructor(private panierService: PanierService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
   ngOnChanges(): void {
-    this.nbItems = this.panierService.getNbItems(); 
+    this.nbItems = this.panierService.getNbItems();
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
   togglemenu = () =>{
     this.showMenu = !this.showMenu
+  }
+  deconnexion = () => {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/authentification')
   }
 
 }

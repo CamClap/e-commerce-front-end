@@ -8,10 +8,11 @@ import { InscriptionComponent } from './composants/inscription/inscription.compo
 import { LivreComponent } from './composants/livre/livre.component';
 import { PanierComponent } from './composants/panier/panier.component';
 import { UtilisateurComponent } from './composants/utilisateur/utilisateur.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: "inscription", component: InscriptionComponent},
-  {path: "commande", component: CommandeComponent},
+  {path: "commande", component: CommandeComponent, canActivate: [AuthGuard], redirectTo: ""},
   {path: "livre", component: LivreComponent},
   {path: "livre/:isbn", component: LivreComponent},
   {path: "panier", component: PanierComponent},

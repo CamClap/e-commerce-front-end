@@ -1,23 +1,25 @@
-<h1>Page d'authentification 2</h1>
-<form #monForm=ngForm (ngSubmit)=connexion()>
+<div class="container" >
+    <h2>Authentification</h2>
+    <form #monForm=ngForm (ngSubmit)=connexion()>
 
-    <div>
-        E-mail : <input type=text name=email [(ngModel)]=user.email required #email=ngModel>
-        <span [hidden]="email.valid || email.pristine">
-            L'email est obligatoire
-        </span>
-    </div>
+        <div>
+            E-mail : <input type=text name=email [(ngModel)]=user.email required #email=ngModel>
+            <span [hidden]="email.valid || email.pristine">
+                L'email est obligatoire
+            </span>
+        </div>
 
-    <div>
-        Mot de passe : <input type=password name=motDePasse [(ngModel)]=user.mdp required #motDePasse=ngModel>
-        <span [hidden]="motDePasse.valid || motDePasse.pristine">
-            Le mot de passe est obligatoire
-        </span>
-    </div>
-    <div>
-        <button class="btn btn-success" [disabled]="!monForm.valid">
-            Connexion
-        </button>
-    </div>
-</form>
-<div id="error">{{ erreur }}</div>
+        <div>
+            Mot de passe : <input type=password name=motDePasse [(ngModel)]=user.mdp required #motDePasse=ngModel>
+            <span [hidden]="motDePasse.valid || motDePasse.pristine">
+                Le mot de passe est obligatoire
+            </span>
+        </div>
+        <div>
+            <button class="btn btn-success" [disabled]="!monForm.valid">
+                Connexion
+            </button>
+        </div>
+    </form>
+    <div id="error">{{ erreur }}</div>
+</div>

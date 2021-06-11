@@ -20,5 +20,9 @@
         </article>
     </div>
     <button (click)="viderPanier()">Vider le panier</button>
-    <button (click)="validerPanier()">Valider le panier</button>
+    <button (click)="validerPanier()" *ngIf="user">Valider le panier</button>
+    <article class="article" *ngIf="!user">
+        <a routerLink="/authentification"> <button>Se connecter</button> </a>
+        <p >Vous devez être connecté pour passer une commande</p>
+    </article>
 </div>
