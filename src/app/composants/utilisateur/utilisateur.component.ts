@@ -45,6 +45,7 @@ export class UtilisateurComponent implements OnInit {
   ngOnInit(): void {
     const connectedUSer = JSON.parse(localStorage.getItem('user'));
     this.formUser.patchValue(connectedUSer);
+    
     // this.auth.checkData(this.user).subscribe((res) => {
     //   this.user = JSON.parse(localStorage.getItem('user'));
     // });

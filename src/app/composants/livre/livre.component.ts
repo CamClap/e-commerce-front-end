@@ -31,6 +31,7 @@ export class LivreComponent implements OnInit {
   }
   ajoutPanier(isbn, quantite) {
     this.panierService.addToCart(isbn, quantite);
+    this.quantite = 1
   }
 
   plusQuantite() {
