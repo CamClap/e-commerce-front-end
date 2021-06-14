@@ -2,13 +2,10 @@
     <div class="logo"><img src="./assets/images/logo-ib.png" alt="Logo ib formation" routerLink="/home" ></div>
     <div class="right-col">
         <ul>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Gouvernance Informatique</a></li>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Informatique</a></li>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Bureautique</a></li>
-            <li routerLink="/authentification" routerLinkActive="active" *ngIf='!user'><a>Connexion</a></li>
-            <li routerLink="/authentification" routerLinkActive="active" *ngIf='user' (click)="deconnexion()"><a>Déconnexion</a></li>
+            <li class="btn" routerLink="/authentification" routerLinkActive="active"  ><a>Connexion</a></li>
+            <li class="btn" routerLink="/authentification" routerLinkActive="active"  (click)="deconnexion();togglemenu() "><a>Déconnexion</a></li>
         </ul>
-        <div [routerLink]="['/utilisateur/']" class="btn-compte"><img class="compte" src="../assets/images/fa-regular_user.png" alt="Modifier compte">
+        <div [routerLink]="['/utilisateur/']" class="btn-panier"><img class="compte" height="35px" src="../assets/images/userBlack.png" alt="Modifier compte">
         </div>
         <div [routerLink]="['/panier/']" class="btn-panier"><img class="panier" src="../assets/images/uil_shopping-basket.png" alt="panier">
             <p>{{  nbItems }}</p>
@@ -17,19 +14,18 @@
     </div>
     <div class="menu-mobile" *ngIf="showMenu" >
         <div class="close-menu"><img src="../assets/images/cross-menu.png" alt="icone pour ouverture du menu" (click)="togglemenu()"></div>
-        <button routerLink="/authentification">
+        <button routerLink="/authentification" (click)="togglemenu()" *ngIf='!isConnected'>
             Connexion
             <img src="../assets/images/fa-regular_user.png" alt="Panier menu">
         </button>
-        <button>
+        <button routerLink="/authentification" (click)="deconnexion()">
+            Déconnexion
+            <img src="../assets/images/fa-regular_user.png" alt="Panier menu">
+        </button>
+        <button [routerLink]="['/panier/']">
             Panier
             <img src="../assets/images/panier-menu.png" alt="Panier menu">
         </button>
-        <p>Catégories :</p>
-        <ul>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Gouvernance Informatique</a></li>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Informatique</a></li>
-            <li routerLink="/listArticles" routerLinkActive="active"><a>Formation Bureautique</a></li>
-        </ul>
+       
     </div>
 </nav>

@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   livres = [];
   result = [];
   livre: any;
+  motsCles = "";
 
   rechercheForm = this.fb.group({
     motsCles: [''],
@@ -34,7 +35,6 @@ export class HomeComponent implements OnInit {
       this.result = this.livres.filter(elt => elt.stock != 0);
     });
   }
-  detaile = () => {};
   rechercherLivre() {
     let motsCles = this.rechercheForm.get('motsCles').value.toLowerCase();
     this.result = this.livres.filter((livre) =>

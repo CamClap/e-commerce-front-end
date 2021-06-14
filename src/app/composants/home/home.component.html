@@ -5,8 +5,8 @@
         <!-- <button>Chercher</button> -->
     </form>
 </div>
-
-<h2> Les Best Sellers </h2>
+<ng-container *ngIf="rechercheForm.dirty || rechercheForm.touched">
+<h2> Votre recherche </h2>
 
 <div *ngFor="let item of result">
     <article>
@@ -24,19 +24,50 @@
         </div>
     </article>
 </div>
+<a routerLink="/home" class="btn-retour"><button >Retour </button></a>
+</ng-container>
 
-<!-- <h2> Nouveautés </h2>
 
-<div *ngFor="let item of livres">
+<ng-container *ngIf="!rechercheForm.dirty || !rechercheForm.touched">
+    <h2> Les Nouveautées </h2>
+
+<div *ngFor="let item of result | slice:-3">
     <article>
-        <div class="article-left"><img src="https://via.placeholder.com/150" alt=""></div>
+        <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre" width="200px"></div>
         <div class="article-right">
             <h3>{{item.titre}}</h3>
-            <p class="description">{{item.description}}</p>
+            <p class="description">{{item.resume}}</p>
             <div class="article-ajoutPrix">
-                <p class="prix"> {{ item.prix }} </p>
+                <p class="prix"> {{ item.prix }} € </p>
+                <ng-container *ngIf="item.stock != 0">
+                    <button (click)="ajoutPanier(item.ISBN)">Ajouter au panier</button>
+                </ng-container>
                 <button [routerLink]="['/livre/',item.ref]">Détails</button>
             </div>
         </div>
     </article>
-</div> -->
+</div>
+</ng-container>
+
+
+
+<ng-container *ngIf="!rechercheForm.dirty || !rechercheForm.touched">
+    <h2> Tous les articles</h2>
+
+<div *ngFor="let item of result ">
+    <article>
+        <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre" width="200px"></div>
+        <div class="article-right">
+            <h3>{{item.titre}}</h3>
+            <p class="description">{{item.resume}}</p>
+            <div class="article-ajoutPrix">
+                <p class="prix"> {{ item.prix }} € </p>
+                <ng-container *ngIf="item.stock != 0">
+                    <button (click)="ajoutPanier(item.ISBN)">Ajouter au panier</button>
+                </ng-container>
+                <button [routerLink]="['/livre/',item.ref]">Détails</button>
+            </div>
+        </div>
+    </article>
+</div>
+</ng-container>

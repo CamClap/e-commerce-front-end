@@ -25,9 +25,10 @@ nav {
   width: 70%;
   top: 0;
   right: 0;
-  background: linear-gradient(180deg, #043978 21.37%, #8baed7 100%);
+  background: #043A79;
   display: flex;
   flex-flow: column nowrap;
+  z-index: 100;
   /* display: none; */
 }
 .menu-mobile > ul li,
@@ -69,6 +70,17 @@ button img {
   justify-content: center;
   align-items: center;
   margin-left: 1.2rem;
+}
+.btn{
+  background: #FFFFFF;
+    border: 1px solid #84F8DC;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1.2rem 2rem;
+    
+}
+.btn:hover{
+  cursor: pointer;
 }
 .close-menu {
   margin: 2rem;
