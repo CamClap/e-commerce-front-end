@@ -24,7 +24,7 @@
         </div>
     </article>
 </div>
-<a routerLink="/home" class="btn-retour"><button >Retour </button></a>
+<button [routerLink]="['/home']">Retour à la liste </button>
 </ng-container>
 
 
@@ -36,7 +36,7 @@
         <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre" width="200px"></div>
         <div class="article-right">
             <h3>{{item.titre}}</h3>
-            <p class="description">{{item.resume}}</p>
+            <p class="description">{{item.resume |slice :0 :350}}...</p>
             <div class="article-ajoutPrix">
                 <p class="prix"> {{ item.prix }} € </p>
                 <ng-container *ngIf="item.stock != 0">
@@ -59,7 +59,7 @@
         <div class="article-left"><img src="{{ item.imageLivre }}" alt="Photo du livre" width="200px"></div>
         <div class="article-right">
             <h3>{{item.titre}}</h3>
-            <p class="description">{{item.resume}}</p>
+            <p class="description">{{item.resume |slice:0 :350}}...</p>
             <div class="article-ajoutPrix">
                 <p class="prix"> {{ item.prix }} € </p>
                 <ng-container *ngIf="item.stock != 0">

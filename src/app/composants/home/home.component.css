@@ -17,6 +17,15 @@ label{
     gap: 1.4rem;
     align-items: center;
 }
+
+.search form{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .search button{
     background: #FFFFFF;
     border: 1px solid #84F8DC;
@@ -46,9 +55,14 @@ box-shadow: 30.8425px -26.8109px 81.7333px rgba(51, 51, 51, 0.1035), inset -6.92
  }
  .article-ajoutPrix{
      display: flex;
+     flex-wrap: wrap;
      justify-content: space-around;
      align-items: center;
  }
+ .article-ajoutPrix>*{
+     margin: .6rem;
+ }
+
  article button{
     background: #FFFFFF;
     border: 1px solid #84F8DC;
