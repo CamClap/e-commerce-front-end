@@ -2,6 +2,7 @@
     <div class="logo"><img src="./assets/images/logo-ib.png" alt="Logo ib formation" routerLink="/home" ></div>
     <div class="right-col">
         <ul>
+            <li class="btn" routerLink="/inscription" routerLinkActive="active"  ><a>Inscription</a></li>
             <li class="btn" routerLink="/authentification" routerLinkActive="active"  ><a>Connexion</a></li>
             <li class="btn" routerLink="/authentification" routerLinkActive="active"  (click)="deconnexion();togglemenu() "><a>Déconnexion</a></li>
         </ul>
@@ -14,10 +15,14 @@
     </div>
     <div class="menu-mobile" *ngIf="showMenu" >
         <div class="close-menu"><img src="../assets/images/cross-menu.png" alt="icone pour ouverture du menu" (click)="togglemenu()"></div>
+        <button routerLink="/inscription" (click)="togglemenu()" *ngIf='!isConnected'>
+            Inscription
+        </button>
         <button routerLink="/authentification" (click)="togglemenu()" *ngIf='!isConnected'>
             Connexion
             <img src="../assets/images/fa-regular_user.png" alt="Panier menu">
         </button>
+        
         <button routerLink="/authentification" (click)="deconnexion()">
             Déconnexion
             <img src="../assets/images/fa-regular_user.png" alt="Panier menu">
